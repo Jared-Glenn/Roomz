@@ -49,7 +49,7 @@ class User(db.Model):
  
  
  
- class Department(db.Model):
+class Department(db.Model):
     """Department model."""
     
     __tablename__ = "departments"

@@ -3,8 +3,8 @@
 from flask import Flask, request, render_template, redirect, jsonify, session, flash
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_bcrypt import Bcrypt
-from models import db, connect_db, User, Department
-from forms import RegisterForm, LoginForm, FeedbackForm
+# from models import db, connect_db, User, Department
+# from forms import RegisterForm, LoginForm, FeedbackForm
 
 app = Flask(__name__)
 
@@ -15,23 +15,17 @@ app.config['SECRET_KEY'] = "shhhhhh"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
 
-connect_db(app)
-app.app_context().push()
-db.create_all()
+# connect_db(app)
+# app.app_context().push()
+# db.create_all()
 
-bcrypt = Bcrypt()
+# bcrypt = Bcrypt()
 
 
 # Main page
 
 @app.route('/')
-def home():
-    """User homepage. Redirects to Register."""
+def desk():
+    """User desk space."""
     
-    if "user_id" in session:
-        
-        user = User.query.get_or_404(session["user_id"])
-        
-        return redirect(f'/users/{user.id}')
-    
-    return redirect('/register')
+    return render_template("desk.html")
