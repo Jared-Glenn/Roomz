@@ -1,7 +1,7 @@
  /* The side navigation menu */
  .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    width: 1000px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -17,7 +17,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #000000;
     display: block;
     transition: 0.3s;
   }
@@ -30,8 +30,17 @@
   /* Position and style the close button (top right corner) */
   .sidenav .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
+    top: 200px;
+    right: 200px;
     font-size: 36px;
     margin-left: 50px;
   }
+
+
+
+  /* 11104A -> Darkest Blue;
+  25244D -> Darker Blue;
+  010030 -> Dark Blue;
+  DA3CF4 -> Pink */
+
+  /* startup business logo, tech company, colors white and pink (#DA3CF4), simple and evocative of many meeting rooms coming together, elegant, clever */
