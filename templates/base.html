@@ -11,19 +11,22 @@
 <body>
 
     <div id="mySidenav" class="sidenav">
-        <a href="/" class="navbar-brand">
+        <a href="/" id="navbar-brand">
             <!-- <img src="/static/images/warbler-logo.png" alt="logo"> -->
             <span>Roomz</span>
           </a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
+        <a href="/"><i class="fa-solid fa-house"></i></a>
+        <a href="/messages"><i class="fa-regular fa-message"></i></a>
+        <a href="#"><i class="fa-solid fa-toolbox"></i></a>
         <a href="#">Contact</a>
       </div>
 
   {% block content %}
   {% endblock %}
 
+
+  
 </div>
+<script src="https://kit.fontawesome.com/bf5d049ab1.js" crossorigin="anonymous"></script>
 </body>
 </html>
