@@ -21,46 +21,55 @@ class User(db.Model):
     username = db.Column(db.String(20),
                          unique=True,
                          nullable=False)
-    password = db.Column(db.String(),
-                         nullable=False)
-    email = db.Column(db.String(50),
-                      unique=True,
-                      nullable=False)
     first_name = db.Column(db.String(30),
                            nullable=False)
     last_name = db.Column(db.String(30),
                           nullable=False)
-    department = db.Column(db.Integer,
-                           db.ForeignKey('departments.id'))
+    rooms = db.relationship(
+        "Room",
+        secondary="users_rooms")
     
     def serialize(self):
         return {
             'id': self.id,
             'username': self.username,
-            'password': self.password,
-            'email': self.email,
             'first_name': self.first_name,
-            'last_name': self.last_name,
-            'department': self.department
+            'last_name': self.last_name
         }
         
     def __repr__(self):
-        return f"<User {self.id} {self.username} {self.password} {self.email} {self.first_name} {self.last_name} {self.department} >"
+        return f"<User {self.id} {self.username} {self.first_name} {self.last_name} {self.rooms} >"
  
  
  
-class Department(db.Model):
-    """Department model."""
+class Room(db.Model):
+    """Room model."""
     
-    __tablename__ = "departments"
+    __tablename__ = "rooms"
     
     id = db.Column(db.Integer,
                    primary_key=True,
                    autoincrement=True)
     name = db.Column(db.String(50),
                       nullable=False)
-    manager_id = db.Column(db.String(),
-                        db.ForeignKey('users.id'))
+    notes = db.Column(db.String())
+    users = db.relationship(
+        "User",
+        secondary="users_rooms")
     
     def __repr__(self):
-        return f"<Department {self.id} {self.title} {self.content} {self.username} >"
+        return f"<Department {self.id} {self.name} {self.notes} {self.users} >"
+
+
+
+class User_Room(db.Model):
+    """Many to many table for users and rooms."""
+    
+    __tablename__ = "users_rooms"
+    
+    user_id = db.Column(db.Integer,
+                        db.ForeignKey('users.id'),
+                        primary_key=True)
+    room_id = db.Column(db.Integer,
+                        db.ForeignKey('rooms.id'),
+                        primary_key=True)

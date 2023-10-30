@@ -23,8 +23,9 @@
     left: 0;
     background-color: #11104A;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 20px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    font-family: 'Roboto Condensed', sans-serif;
   }
   
   /* The navigation menu links */
@@ -55,6 +56,13 @@
 
   .fa {
     font-size: 60px;
+  }
+
+  #navbar-brand {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Raleway', sans-serif;
+    color: #DA3CF4;
   }
 
   .bottom-side {
