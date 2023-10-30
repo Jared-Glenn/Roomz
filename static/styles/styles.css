@@ -1,16 +1,27 @@
- 
+ body {
+  background-color: #010030;
+  color: white;
+ }
+
+ #main-body {
+  margin-left: 180px;
+ }
+
+ h1 {
+  font-size: 3.5rem;
+ }
  
  
  
  /* The side navigation menu */
  .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 200px; /* 0 width - change this with JavaScript */
+    width: 150px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #25244D; /* Black*/
+    background-color: #11104A;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -18,9 +29,11 @@
   
   /* The navigation menu links */
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    text-align: center;
+    padding: 8px 8px 8px 10px;
+    margin-top: 10px;
     text-decoration: none;
-    font-size: 45px;
+    font-size: 20px;
     color: rgb(177, 177, 177);
     display: block;
     transition: 0.3s;
@@ -38,6 +51,26 @@
     right: 200px;
     font-size: 36px;
     margin-left: 50px;
+  }
+
+  .fa {
+    font-size: 60px;
+  }
+
+  .bottom-side {
+    max-width: 90px;
+  }
+
+  .roomz-ai {
+    position: absolute;
+    left: 30px;
+    bottom: 230px;
+  }
+
+  .user-pic {
+    position: absolute;
+    left: 30px;
+    bottom: 100px;
   }
 
 

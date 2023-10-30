@@ -9,24 +9,30 @@
 </head>
 
 <body>
-
     <div id="mySidenav" class="sidenav">
         <a href="/" id="navbar-brand">
             <!-- <img src="/static/images/warbler-logo.png" alt="logo"> -->
-            <span>Roomz</span>
+            <span>R</span>
           </a>
-        <a href="/"><i class="fa-solid fa-house"></i></a>
-        <a href="/messages"><i class="fa-regular fa-message"></i></a>
-        <a href="#"><i class="fa-solid fa-toolbox"></i></a>
-        <a href="#">Contact</a>
+        <a href="/"><i class="fa-solid fa-house fa"></i>
+          <br>
+          Home
+          </a>
+        <a href="/messages"><i class="fa-regular fa-message fa"></i>
+        <br>
+        Messages
+        </a>
+        <a href="#"><i class="fa-solid fa-toolbox fa"></i>
+          <br>
+          Tools
+          </a>
+        <a href="#"><img class="bottom-side roomz-ai" src="/static/images/roomz_ai.png" alt=""></a>
+        <a href="#"><img class="bottom-side user-pic" src="/static/images/generic_user.png" alt=""></a>
       </div>
 
   {% block content %}
   {% endblock %}
 
-
-  
-</div>
 <script src="https://kit.fontawesome.com/bf5d049ab1.js" crossorigin="anonymous"></script>
 </body>
 </html>
