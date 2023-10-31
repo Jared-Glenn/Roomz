@@ -9,6 +9,19 @@ def connect_db(app):
     db.app = app
     db.init_app(app)
     
+    
+class Pinned(db.Model):
+    """Connetion of a pinner and the pinned person."""
+    
+    __tablename__='pinned'
+    
+    pinned_user = db.Column(db.Integer,
+                            db.ForeignKey('users.id', ondelete='cascade'),
+                            primary_key=True)
+    pinning_user = db.Column(db.Integer,
+                             db.ForeignKey('users.id', ondelete="cascade"),
+                             primary_key=True)
+    
 
 class User(db.Model):
     """User model."""
@@ -69,7 +82,7 @@ class Task(db.Model):
     id = db.Column(db.Integer,
                    primary_key=True,
                    autoincrement=True)
-    complete = db.Column(db.Boolean)
+    complete = db.Column(db.String(5))
     item = db.Column(db.String(100),
                      nullable=False)
     room = db.Column(db.Integer,
@@ -113,15 +126,3 @@ class User_Room(db.Model):
                         db.ForeignKey('rooms.id'),
                         primary_key=True)
     
-
-class Pinned(db.Model):
-    """Connetion of a pinner and the pinned person."""
-    
-    __tablename__='pinned'
-    
-    pinned_user = db.Column(db.Integer,
-                            db.ForeignKey('users.id', ondelete='cascade'),
-                            primary_key=True)
-    pinning_user = db.Column(db.Integer,
-                             db.ForeignKey('users.id', ondelete="cascade"),
-                             primary_key=True)
