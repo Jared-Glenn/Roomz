@@ -81,6 +81,31 @@
     bottom: 100px;
   }
 
+.calendar {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.day {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr); /* for 8am to midnight with half-hour intervals */
+    gap: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.hour {
+    border: 1px solid #e0e0e0;
+    height: 40px;
+}
+
+.event {
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
 
   /* 11104A -> Darkest Blue;

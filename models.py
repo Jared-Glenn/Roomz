@@ -25,21 +25,19 @@ class User(db.Model):
                            nullable=False)
     last_name = db.Column(db.String(30),
                           nullable=False)
+    job_title = db.Column(db.String(50))
     rooms = db.relationship(
         "Room",
         secondary="users_rooms")
-    
-    def serialize(self):
-        return {
-            'id': self.id,
-            'username': self.username,
-            'first_name': self.first_name,
-            'last_name': self.last_name
-        }
+    pinned_people = db.relationship(
+        "User",
+        secondary="pinned",
+        primaryjoin=-(Pinned.pinned_user == id),
+        secondaryjoin=(Pinned.pinning_user == id)
+    )
         
     def __repr__(self):
-        return f"<User {self.id} {self.username} {self.first_name} {self.last_name} {self.rooms} >"
- 
+        return f"<User {self.id} {self.username} {self.first_name} {self.last_name} {self.job_title} {self.rooms} {self.pinned_people} >"
  
  
 class Room(db.Model):
@@ -56,11 +54,52 @@ class Room(db.Model):
     users = db.relationship(
         "User",
         secondary="users_rooms")
+    tasks = db.relationship('Task')
+    events = db.relationship('Event')
     
     def __repr__(self):
-        return f"<Department {self.id} {self.name} {self.notes} {self.users} >"
+        return f"<Room {self.id} {self.name} {self.notes} {self.users} {self.tasks} {self.events} >"
 
 
+class Task(db.Model):
+    """Task model."""
+    
+    __tablename__ = "tasks"
+    
+    id = db.Column(db.Integer,
+                   primary_key=True,
+                   autoincrement=True)
+    complete = db.Column(db.Boolean)
+    item = db.Column(db.String(100),
+                     nullable=False)
+    room = db.Column(db.Integer,
+                     db.ForeignKey('rooms.id', ondelete='CASCADE'),
+                     nullable=False)
+    
+    def __repr__(self):
+        return f"<Task {self.id} {self.complete} {self.item} {self.room} >"
+    
+
+class Event(db.Model):
+    """Event model."""
+    
+    __tablename__ = "events"
+    
+    id = db.Column(db.Integer,
+                   primary_key=True,
+                   autoincrement=True)
+    name = db.Column(db.String(50),
+                     nullable=False)
+    datetime = db.Column(db.DateTime,
+                     nullable=False)
+    room = db.Column(db.Integer,
+                     db.ForeignKey('rooms.id', ondelete='CASCADE'),
+                     nullable=False)
+    
+    def __repr__(self):
+        return f"<Event {self.id} {self.name} {self.datetime} {self.room} >"
+    
+    
 
 class User_Room(db.Model):
     """Many to many table for users and rooms."""
@@ -73,3 +112,16 @@ class User_Room(db.Model):
     room_id = db.Column(db.Integer,
                         db.ForeignKey('rooms.id'),
                         primary_key=True)
+    
+
+class Pinned(db.Model):
+    """Connetion of a pinner and the pinned person."""
+    
+    __tablename__='pinned'
+    
+    pinned_user = db.Column(db.Integer,
+                            db.ForeignKey('users.id', ondelete='cascade'),
+                            primary_key=True)
+    pinning_user = db.Column(db.Integer,
+                             db.ForeignKey('users.id', ondelete="cascade"),
+                             primary_key=True)

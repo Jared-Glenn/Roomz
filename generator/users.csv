@@ -1,5 +1,8 @@
-username,first_name,last_name
-listsandra,Sandra,List
-edward88,Edward,Date
-lacystace,Stacy,Whin
-Calimari,Mary,Mikal
+username,first_name,last_name,job_title
+listsandra,Sandra,List,Software Developer
+edward88,Edward,Date,Team Lead
+lacystace,Stacy,Whin, Software Developer
+Calimari,Mary,Mikal, HR Representative
+Tauntaun,Tarun,Vishak,Software Developer
+Chewey-Wilson,John,Wilson,Software Developer
+

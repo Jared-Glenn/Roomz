@@ -1,0 +1,4 @@
+name,datetime,room
+1-on-1 with John,2023-10-31 9:00:00,1
+
+return f"<Event {self.id} {self.name} {self.datetime} {self.room} >"

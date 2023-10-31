@@ -5,10 +5,163 @@
 <h1>Good morning, {{ user.first_name }}!</h1>
 
 <div id="tasks-area">
+    <h3>Tasks</h3>
     <button>See all</button>
 
-    
+    {% for room in user.rooms %}
 
+    <div>
+
+    <h4>{{ room.name }}</h4>
+
+    <p>{{ room.notes }}</p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="Schedule" style="width: 566px; height: 315px; padding: 24px; background: #25244D; border-radius: 8px; overflow: hidden; border: 1px white solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+  <div class="PendingTasks" style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
+    <div class="Frame96" style="justify-content: flex-start; align-items: center; gap: 24px; display: flex">
+      <div class="Vector14" style="width: 14.73px; height: 12.09px; position: relative; transform: rotate(90deg); transform-origin: 0 0">
+        <div class="Vector12" style="width: 14.73px; height: 12.09px; left: 0px; top: 0px; position: absolute; border: 3px white solid"></div>
+      </div>
+      <div class="Oct30Nov3" style="color: white; font-size: 20px; font-family: SF Pro Text; font-weight: 400; line-height: 28px; word-wrap: break-word">Oct 30 - Nov 3</div>
+      <div class="Vector13" style="width: 14.73px; height: 12.09px; position: relative; transform: rotate(-90deg); transform-origin: 0 0">
+        <div class="Vector12" style="width: 14.73px; height: 12.09px; left: 0px; top: 0px; position: absolute; border: 3px white solid"></div>
+      </div>
+    </div>
+    <div class="Frame101" style="justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+      <div class="Button" style="width: 66.29px; padding-left: 17.14px; padding-right: 17.14px; padding-top: 11.43px; padding-bottom: 11.43px; border-radius: 5.71px; border: 0.71px #DA3CF4 solid; justify-content: flex-end; align-items: center; gap: 7.14px; display: flex">
+        <div class="Button" style="color: #DA3CF4; font-size: 16px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">Week</div>
+      </div>
+      <div class="Button" style="width: 40px; height: 40px; padding: 7.11px; background: #DA3CF4; border-radius: 5.69px; border: 0.71px #DA3CF4 solid; justify-content: center; align-items: center; gap: 7.11px; display: flex">
+        <div class="Vector" style="width: 24.88px; height: 24.88px; background: #010030"></div>
+      </div>
+    </div>
+  </div>
+  <div class="Frame95" style="width: 676px; height: 350px; position: relative">
+    <div class="Frame98" style="left: 0.50px; top: 50px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+      <div class="ScheduleBlocks" style="width: 75px; height: 60px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+        <div class="00" style="text-align: center; color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Mon<br/>Oct 30</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 60px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+        <div class="00" style="text-align: center; color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Tue<br/>Oct 31</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 60px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+        <div class="00" style="text-align: center; color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Wed<br/>Nov 1</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 60px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+        <div class="00" style="text-align: center; color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Thu<br/>Nov 2</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 60px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+        <div class="00" style="text-align: center; color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Fri<br/>Nov 3</div>
+      </div>
+    </div>
+    <div class="Frame97" style="left: 0.50px; top: 0px; position: absolute; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00"></div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">8:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">9:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">10:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">11:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">12:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">13:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">14:00</div>
+      </div>
+      <div class="ScheduleBlocks" style="width: 75px; height: 50px; padding: 10px; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid; justify-content: center; align-items: center; gap: 10px; display: flex">
+        <div class="00" style="color: white; font-size: 16px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">15:00</div>
+      </div>
+    </div>
+    <div class="Frame107" style="left: 75.50px; top: 50px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+      <div class="Frame106" style="width: 525px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div class="Rectangle36" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle42" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Frame71" style="width: 150px; height: 60px; padding: 8px; background: #11104A; border-radius: 4px; overflow: hidden; border: 0.50px black solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+          <div class="Frame53" style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; display: flex">
+            <div class="Project2" style="align-self: stretch; color: #888888; font-size: 12px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Project 2</div>
+            <div class="DailyStandUpMeeting" style="align-self: stretch; color: white; font-size: 14px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">Daily Stand Up Meeting</div>
+          </div>
+        </div>
+        <div class="Rectangle60" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle66" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Frame99" style="width: 75px; height: 60px; padding: 8px; background: #11104A; border-radius: 4px; overflow: hidden; border: 0.50px black solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+          <div class="Frame53" style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; display: flex">
+            <div class="Project3" style="align-self: stretch; color: #888888; font-size: 12px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Project 3</div>
+            <div class="1WJohn" style="align-self: stretch; color: white; font-size: 14px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">1:1 w/ John</div>
+          </div>
+        </div>
+        <div class="Rectangle77" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+      </div>
+      <div class="Frame105" style="justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div class="Frame91" style="width: 225px; height: 60px; padding: 8px; background: #11104A; border-radius: 4px; overflow: hidden; border: 0.50px black solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+          <div class="Frame53" style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; display: flex">
+            <div class="Project1" style="align-self: stretch; color: #888888; font-size: 12px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Project 1</div>
+            <div class="UxBrainstormingMeeting" style="align-self: stretch; color: white; font-size: 14px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">UX Brainstorming Meeting</div>
+          </div>
+        </div>
+        <div class="Rectangle56" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle62" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle68" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle74" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle77" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+      </div>
+      <div class="Frame104" style="justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div class="Rectangle39" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle45" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle51" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle57" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Frame92" style="width: 75px; height: 60px; padding: 8px; background: #11104A; border-radius: 4px; overflow: hidden; border: 0.50px black solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+          <div class="Frame53" style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; display: flex">
+            <div class="Project3" style="align-self: stretch; color: #888888; font-size: 12px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Project 3</div>
+            <div class="1WJohn" style="align-self: stretch; color: white; font-size: 14px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">1:1 w/ John</div>
+          </div>
+        </div>
+        <div class="Rectangle69" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle75" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle77" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+      </div>
+      <div class="Frame108" style="justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div class="Frame94" style="width: 450px; height: 60px; padding: 8px; background: #11104A; border-radius: 4px; overflow: hidden; border: 0.50px black solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+          <div class="Frame53" style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; display: flex">
+            <div class="Project1" style="align-self: stretch; color: #888888; font-size: 12px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Project 1</div>
+            <div class="DesignReviewSession" style="align-self: stretch; color: white; font-size: 14px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">Design Review session</div>
+          </div>
+        </div>
+        <div class="Rectangle75" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle77" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+      </div>
+      <div class="Frame102" style="justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div class="Rectangle41" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Frame93" style="width: 225px; height: 60px; padding: 8px; background: #11104A; border-radius: 4px; overflow: hidden; border: 0.50px black solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+          <div class="Frame53" style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2px; display: flex">
+            <div class="Project4" style="align-self: stretch; color: #888888; font-size: 12px; font-family: SF Pro Text; font-weight: 400; word-wrap: break-word">Project 4</div>
+            <div class="ScrumUpdateMeeting" style="align-self: stretch; color: white; font-size: 14px; font-family: SF Pro Text; font-weight: 700; word-wrap: break-word">Scrum update meeting</div>
+          </div>
+        </div>
+        <div class="Rectangle65" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle71" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle77" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+        <div class="Rectangle78" style="width: 75px; height: 60px; opacity: 0.50; border: 0.50px rgba(136.20, 136.20, 136.20, 0.25) solid"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </div>
