@@ -1,8 +1,8 @@
-username,first_name,last_name,job_title
-listsandra,Sandra,List,Software Developer
-edward88,Edward,Date,Team Lead
-lacystace,Stacy,Whin, Software Developer
-Calimari,Mary,Mikal, HR Representative
-Tauntaun,Tarun,Vishak,Software Developer
-Chewey-Wilson,John,Wilson,Software Developer
+username,first_name,last_name,job_title,availability
+listsandra,Sandra,List,Software Developer,available
+edward88,Edward,Date,Team Lead,offline
+lacystace,Stacy,Whin, Software Developer,busy
+Calimari,Mary,Mikal, HR Representative,offline
+Tauntaun,Tarun,Vishak,Software Developer,available
+Chewey-Wilson,John,Wilson,Software Developer,available
 

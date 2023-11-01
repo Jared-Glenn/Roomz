@@ -1,6 +1,7 @@
 """User and Feedback models detailed."""
 
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import backref
 
 db = SQLAlchemy()
 
@@ -39,18 +40,22 @@ class User(db.Model):
     last_name = db.Column(db.String(30),
                           nullable=False)
     job_title = db.Column(db.String(50))
+    availability = db.Column(db.String(20))
     rooms = db.relationship(
         "Room",
-        secondary="users_rooms")
+        secondary="users_rooms",
+        back_populates='users')
     pinned_people = db.relationship(
         "User",
         secondary="pinned",
-        primaryjoin=-(Pinned.pinned_user == id),
-        secondaryjoin=(Pinned.pinning_user == id)
+        primaryjoin=(Pinned.pinned_user == id),
+        secondaryjoin=(Pinned.pinning_user == id),
+        backref=backref('pinning_user', lazy='dynamic'),
+        lazy='dynamic'
     )
         
     def __repr__(self):
-        return f"<User {self.id} {self.username} {self.first_name} {self.last_name} {self.job_title} {self.rooms} {self.pinned_people} >"
+        return f"<User {self.id} {self.username} {self.first_name} {self.last_name} {self.job_title} {self.availability} {self.rooms} {self.pinned_people} >"
  
  
 class Room(db.Model):
@@ -62,11 +67,13 @@ class Room(db.Model):
                    primary_key=True,
                    autoincrement=True)
     name = db.Column(db.String(50),
-                      nullable=False)
+                      nullable=False,
+                      unique=True)
     notes = db.Column(db.String())
     users = db.relationship(
         "User",
-        secondary="users_rooms")
+        secondary="users_rooms",
+        back_populates='rooms')
     tasks = db.relationship('Task')
     events = db.relationship('Event')
     
@@ -105,8 +112,8 @@ class Event(db.Model):
                      nullable=False)
     datetime = db.Column(db.DateTime,
                      nullable=False)
-    room = db.Column(db.Integer,
-                     db.ForeignKey('rooms.id', ondelete='CASCADE'),
+    room = db.Column(db.String(),
+                     db.ForeignKey('rooms.name', ondelete='CASCADE'),
                      nullable=False)
     
     def __repr__(self):

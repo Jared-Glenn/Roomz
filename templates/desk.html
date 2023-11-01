@@ -4,7 +4,7 @@
 <div id="main-body">
   <h1>Good morning, {{ user.first_name }}!</h1>
 
-  <div id="tasks-area">
+  <div id="tasks-area main-page-area">
       <h2>Tasks</h3>
       <button>See all</button>
 
@@ -25,26 +25,58 @@
 
   </div>
 
-  <div id="activity-area">
+  <div id="activity-area main-page-area">
     <h2>Activity Feed</h2>
     <button>See all</button>
 
-    {% for room in user.rooms %}
+    <div class="activity">
+      <p class="activity-main"><strong>Daily Stand Up</strong> meeting started in Homescreen Team</p>
+      <p class="activity-project">Homescreen Team</p>
+      <p class="activity-time">Now</p>
+    </div>
+    <div class="activity">
+      <p class="activity-main">You've been assigned a new task: <strong>Develop a project budget.</strong></p>
+      <p class="activity-project">Project Winter</p>
+      <p class="activity-time">Now</p>
+    </div>
+    <div class="activity">
+      <p class="activity-main">New meeting summary created: <strong>Daily Stand Up.</strong></p>
+      <p class="activity-room">Homescreen Team</p>
+      <p class="activity-time">Now</p>
+    </div>
+  </div>
 
-    <div class="area-interior">
+  <div id="events-area main-page-area">
+    <h2>Upcoming Events</h2>
+    <button>See all</button>
 
-    <h3>{{ room.name }}</h4>
+    {% for event in events %}
 
-    <ul>
-      {% for item in room.tasks %}
-        <li><input type="checkbox">{{ item.item }}</li>
-      {% endfor %}
-    </ul>
+    <div class="event">
+      <p class="event-room">{{ event.room }}</p>
+      <p class="event-name">{{ event.name }}</p>
+      <p class="event-time">{{ event.datetime }}</p>
     </div>
 
     {% endfor %}
 
-</div>
+  </div>
+
+  <div id="pinned-area main-page-area">
+    <h2>Pinned People</h2>
+    <button>See all</button>
+
+    {% for person in user.pinned_people %}
+
+    <div class="pinned-person">
+      <p class="pinned-person-name">{{ person.first_name }} {{ person.last_name }}</p>
+      <p class="pinned-person-job">{{ person.job_title }}</p>
+      <p class="pinned-person-availability">{{ person.availability }}</p>
+    </div>
+
+    {% endfor %}
+
+  </div>
 
 </div>
 

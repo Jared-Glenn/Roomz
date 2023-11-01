@@ -3,7 +3,7 @@
 from flask import Flask, request, render_template, redirect, jsonify, session, flash
 # from flask_debugtoolbar import DebugToolbarExtension
 # from flask_bcrypt import Bcrypt
-from models import db, connect_db, User, Room, User_Room
+from models import db, connect_db, User, Room, User_Room, Event, Task
 # from forms import RegisterForm, LoginForm, FeedbackForm
 
 app = Flask(__name__)
@@ -29,14 +29,18 @@ def desk():
     """User desk space."""
     
     user = User.query.get_or_404(1)
-    for person in user.pinned_people:
-        print(person)
     
-    events = []
-    # for event in 
-    # events = 
+    rooms = []
+    for room in user.rooms:
+        rooms.append(room.name)
+    events = (Event
+              .query
+              .filter(Event.room.in_(rooms))
+              .order_by(Event.datetime.desc())
+              .limit(100)
+              .all())
     
-    return render_template("desk.html", user=user)
+    return render_template("desk.html", user=user, events=events)
 
 @app.route('/floorplan')
 def floorplan():

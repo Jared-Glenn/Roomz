@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenav" class="sidenav sidenav-left">
         <a href="/" id="navbar-brand"><i class="fa-light fa-stroopwafel fa"></i>
           <br>
           ROOMZ
@@ -20,10 +20,6 @@
         <a href="/"><i class="fa-solid fa-house fa"></i>
           <br>
           Home
-          </a>
-        <a href="/floorplan"><i class="fa-brands fa-buromobelexperte fa"></i>
-          <br>
-          Floorplan
           </a>
         <a href="/messages"><i class="fa-regular fa-message fa"></i>
           <br>
@@ -36,6 +32,24 @@
         <a href="#"><img class="bottom-side roomz-ai" src="/static/images/roomz_ai.png" alt=""></a>
         <a href="#"><img class="bottom-side user-pic" src="/static/images/generic_user.png" alt=""></a>
       </div>
+
+    <div id="mySidenav" class="sidenav sidenav-right">
+
+      {% for room in user.rooms %}
+        <a href="/roomz/{{ room.id }}"><i class="fa-solid fa-door-open fa"></i>
+          <br>
+          {{ room.name }}
+          </a>
+      {% endfor %}
+        
+      <div class="floorplan-link">
+        <a href="/floorplan"><i class="fa-brands fa-buromobelexperte fa"></i>
+          <br>
+          Floorplan
+          </a>
+      </div>
+
+    </div>
 
   {% block content %}
   {% endblock %}
