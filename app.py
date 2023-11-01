@@ -29,6 +29,12 @@ def desk():
     """User desk space."""
     
     user = User.query.get_or_404(1)
+    for person in user.pinned_people:
+        print(person)
+    
+    events = []
+    # for event in 
+    # events = 
     
     return render_template("desk.html", user=user)
 

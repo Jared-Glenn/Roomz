@@ -1,52 +1,60 @@
- body {
+  /* 11104A -> Darkest Blue;
+  25244D -> Darker Blue;
+  010030 -> Dark Blue;
+  DA3CF4 -> Pink */
+
+
+body {
   background-color: #010030;
   color: white;
  }
 
- #main-body {
+#main-body {
   margin-left: 180px;
  }
 
- h1 {
+h1 {
   font-size: 3.5rem;
  }
+
+ul {
+  list-style-type: none;
+}
  
- 
- 
- /* The side navigation menu */
- .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 150px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #11104A;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    font-family: 'Roboto Condensed', sans-serif;
-  }
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 150px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #11104A;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  font-family: 'Roboto Condensed', sans-serif;
+}
   
   /* The navigation menu links */
-  .sidenav a {
-    text-align: center;
-    padding: 8px 8px 8px 10px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-size: 20px;
-    color: rgb(177, 177, 177);
-    display: block;
-    transition: 0.3s;
-  }
+.sidenav a {
+  text-align: center;
+  padding: 8px 8px 8px 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(177, 177, 177);
+  display: block;
+  transition: 0.3s;
+}
   
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #DA3CF4;
-  }
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #DA3CF4;
+}
   
   /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
+.sidenav .closebtn {
     position: absolute;
     top: 200px;
     right: 200px;
@@ -54,63 +62,32 @@
     margin-left: 50px;
   }
 
-  .fa {
+.fa {
     font-size: 60px;
   }
 
-  #navbar-brand {
+#navbar-brand {
     margin-top: 20px;
     margin-bottom: 50px;
     font-family: 'Raleway', sans-serif;
     color: #DA3CF4;
   }
 
-  .bottom-side {
+.bottom-side {
     max-width: 90px;
   }
 
-  .roomz-ai {
+.roomz-ai {
     position: absolute;
     left: 30px;
     bottom: 230px;
   }
 
-  .user-pic {
+.user-pic {
     position: absolute;
     left: 30px;
     bottom: 100px;
   }
 
-.calendar {
-    width: 90%;
-    margin: 20px auto;
-}
-
-.day {
-    display: grid;
-    grid-template-columns: repeat(16, 1fr); /* for 8am to midnight with half-hour intervals */
-    gap: 5px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.hour {
-    border: 1px solid #e0e0e0;
-    height: 40px;
-}
-
-.event {
-    background-color: #4caf50;
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
 
-  /* 11104A -> Darkest Blue;
-  25244D -> Darker Blue;
-  010030 -> Dark Blue;
-  DA3CF4 -> Pink */
-
-  /* startup business logo, tech company, colors white and pink (#DA3CF4), simple and evocative of many meeting rooms coming together, elegant, clever */
