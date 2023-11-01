@@ -2,7 +2,84 @@
 
 {% block content %}
 <div id="main-body">
-<h1>Your Roomz:</h1>
+<h1>Your Floorplan</h1>
+
+<svg width="1000" height="1400">
+
+    <!-- First column -->
+    <a href="/in-development">
+        <g>
+            <rect x="50" y="40" width="140" height="180" class="floorplan-room floorplan-unused"/>
+            <text  x="120" y="130" >Empty Room</text>
+        </g>
+    </a>
+    <a href="/in-development">
+        <g>
+            <rect x="50" y="220" width="140" height="180" class="floorplan-room floorplan-unused"/>
+            <text  x="120" y="310" >Empty Room</text>
+        </g>
+    </a>
+    <a href="/in-development">
+        <g>
+            <rect x="50" y="400" width="140" height="180" class="floorplan-room floorplan-unused"/>
+            <text  x="120" y="490" >Empty Room</text>
+        </g>
+    </a>
+    <a href="/in-development">
+        <g>
+            <rect x="50" y="580" width="140" height="180" class="floorplan-room floorplan-unused"/>
+            <text  x="120" y="670" >Empty Room</text>
+        </g>
+    </a>
+
+    <!-- Second column -->
+    <a href="/roomz/{{ user.rooms[0].id }}">
+        <g>
+            <rect x="190" y="40" width="250" height="180" class="floorplan-room floorplan-1"/>
+            <text  x="315" y="130" >{{ user.rooms[0].name }}</text>
+        </g>
+    </a>
+    <a href="/in-development">
+        <g>
+            <rect x="190" y="220" width="500" height="360" class="floorplan-room floorplan-floor"/>
+            <text  x="440" y="400" >Other Desks</text>
+        </g>
+    </a>
+    <a href="/roomz/{{ user.rooms[1].id }}">
+        <g>
+            <rect x="190" y="580" width="250" height="180" class="floorplan-room floorplan-2"/>
+            <text  x="315" y="670" >{{ user.rooms[1].name }}</text>
+        </g>
+    </a>
+
+    <!-- Final columns -->
+    <a href="/">
+        <g>
+            <polygon points="440,40 830,40 830,400 690,400 690,220 440,220" class="floorplan-room floorplan-desk"/>
+            <text  x="650" y="160" >Personal Desk</text>
+        </g>
+    </a>
+    <a href="/roomz/{{ user.rooms[2].id }}">
+        <g>
+            <rect x="440" y="580" width="250" height="180" class="floorplan-room floorplan-3"/>
+            <text  x="565" y="670" >{{ user.rooms[2].name }}</text>
+        </g>
+    </a>
+    <a href="/in-development">
+        <g>
+            <rect x="690" y="400" width="140" height="360"  class="floorplan-room floorplan-lunch-room"/>
+            <text  x="760" y="580" >Lunch Room</text>
+        </g>
+    </a>
+
+
+
+    
+
+    
+
+  </svg>
+  
 
 </div>
 

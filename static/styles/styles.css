@@ -103,4 +103,45 @@ ul {
   bottom: 240px;
 }
 
+a.active {
+  color: #DA3CF4;
+}
+
+rect {
+  fill: #010030;
+  stroke-width: 3;
+  stroke: white;
+}
+
+polygon {
+  fill: #010030;
+  stroke-width: 3;
+  stroke: white;
+}
+
+text {
+  font-family: Verdana;
+  font-size: 20;
+  pointer-events: none;
+  text-anchor: middle;
+  visibility: hidden;
+}
+
+rect:hover + text {
+  visibility: visible;
+  fill: white;
+}
+
+polygon:hover + text {
+  visibility: visible;
+  fill: white;
+}
+
+rect:hover {
+  fill: #DA3CF4;
+}
+
+polygon:hover {
+  fill: #DA3CF4;
+}
 

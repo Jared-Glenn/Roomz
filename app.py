@@ -40,7 +40,10 @@ def desk():
               .limit(100)
               .all())
     
+    print(f'{request.endpoint}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    
     return render_template("desk.html", user=user, events=events)
+
 
 @app.route('/floorplan')
 def floorplan():
@@ -50,10 +53,19 @@ def floorplan():
     
     return render_template("floorplan.html", user=user)
 
+
 @app.route('/roomz/<room_id>')
 def room(room_id):
     """Room."""
     
+    user = User.query.get_or_404(1)
     room = Room.query.get_or_404(room_id)
     
-    return render_template("room.html", room=room)
+    return render_template("room.html", user=user, room=room)
+
+
+@app.route('/in-development')
+def in_dev():
+    """Reserved for pages still in development."""
+    
+    return render_template("in_development.html")
