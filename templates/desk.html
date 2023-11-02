@@ -6,19 +6,22 @@
 
   <div class="tasks-area main-page-area">
       <h2>Tasks</h3>
-      <button>See all</button>
+      <button class="thin">See all</button>
 
       {% for room in user.rooms %}
 
-      <div class="area-interior">
+      <div class="area-interior area-interior-vertical">
 
       <h3>{{ room.name }}</h4>
 
-      <ul>
+      <form>
         {% for item in room.tasks %}
-          <li><input type="checkbox">{{ item.item }}</li>
+        <div class="tasks-list">
+          <span><input type="checkbox" id="{{ item.id }}"></span>
+          <label for="{{ item.id }}">{{ item.item }}</label>
+        </div>
         {% endfor %}
-      </ul>
+      </form>
       </div>
 
       {% endfor %}
@@ -27,7 +30,7 @@
 
   <div class="activity-area main-page-area">
     <h2>Activity Feed</h2>
-    <button>See all</button>
+    <button class="thin">See all</button>
 
     <div class="activity">
       <p class="activity-main"><strong>Daily Stand Up</strong> meeting started in Homescreen Team</p>
@@ -48,7 +51,7 @@
 
   <div class="events-area main-page-area">
     <h2>Upcoming Events</h2>
-    <button>See all</button>
+    <button class="thin">See all</button>
 
     {% for event in events %}
 
@@ -64,7 +67,7 @@
 
   <div class="pinned-area main-page-area">
     <h2>Pinned People</h2>
-    <button>See all</button>
+    <button class="thin">See all</button>
 
     {% for person in user.pinned_people %}
 
