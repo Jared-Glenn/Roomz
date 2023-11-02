@@ -40,8 +40,6 @@ def desk():
               .limit(100)
               .all())
     
-    print(f'{request.endpoint}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-    
     return render_template("desk.html", user=user, events=events)
 
 
@@ -61,7 +59,25 @@ def room(room_id):
     user = User.query.get_or_404(1)
     room = Room.query.get_or_404(room_id)
     
-    return render_template("room.html", user=user, room=room)
+    # Get all teammates.
+    teammate_list = (User_Room
+                 .query
+                 .filter(User_Room.room_id == room_id)
+                 .limit(10)
+                 .all())
+    
+    teammate_ids = []
+    for teammate in teammate_list:
+        teammate_ids.append(teammate.user_id)
+    
+    teammates = (User
+                .query
+                .filter(User.id.in_(teammate_ids))
+                .all())
+    
+    events = Event.query.filter(Event.room==room.name)
+    
+    return render_template("room.html", user=user, room=room, teammates=teammates, events=events)
 
 
 @app.route('/in-development')

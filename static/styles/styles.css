@@ -1,4 +1,4 @@
-  /* 11104A -> Darkest Blue;
+  /* 11104A -> Mid Blue;
   25244D -> Darker Blue;
   010030 -> Dark Blue;
   DA3CF4 -> Pink */
@@ -145,3 +145,9 @@ polygon:hover {
   fill: #DA3CF4;
 }
 
+/* Page Interiors */
+
+
+.main-page-area {
+  background-color: #25244D
+}
