@@ -80,6 +80,13 @@ def room(room_id):
     return render_template("room.html", user=user, room=room, teammates=teammates, events=events)
 
 
+@app.route('/roomzie-demonstration')
+def roomzie():
+    """Shows a video of Roomzie's proposed functions."""
+    
+    return render_template("roomzie_demonstration.html")
+
+
 @app.route('/in-development')
 def in_dev():
     """Reserved for pages still in development."""

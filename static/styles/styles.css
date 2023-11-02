@@ -361,3 +361,175 @@ p.user-job {
   padding: 0;
   line-height: 20px;
 }
+
+/* ************************ ROOM STYLES ************************************* */
+
+.room-page-area {
+  background-color: #25244D;
+  border: solid white;
+  border-radius: 15px;
+  border-width: 2px;
+  padding: 15px;
+  margin: 15px 10px;
+  float: left;
+  overflow: auto;
+  position: relative;
+}
+
+
+.room-h2 {
+  font-size: 30px;
+}
+
+.new-area {
+  width: 920px;
+  height: 300px;
+}
+
+.area-interior-long {
+  width: 880px;
+  height: 50px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+button.long-area {
+  top: 15px;
+  background-color: #11104A;
+}
+
+.new-long {
+  padding-top: 15px;
+}
+
+.teammates-area {
+  width: 210px;
+  height: 400px;
+}
+
+button.extra-long-area {
+  top: 60px;
+  left: 25px;
+  width: 190px;
+  height: 30px;
+}
+
+.room-user-area {
+  margin-top: 30px;
+}
+
+.reminders-area {
+  width: 380px;
+  height: 400px;
+}
+
+.event-area {
+  width: 350px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+button.short-area {
+  top: 25px;
+  background-color: #11104A;
+}
+
+p.reminders {
+  width: 240px;
+  margin-bottom: 0;
+}
+
+.resources-area {
+  width: 220px;
+  height: 400px;
+}
+
+h6 {
+  font-size: 15px;
+  margin-left: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.team-files {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.team-file {
+  float: none;
+  width: 200px;
+  background-color: #11104A;
+  border: solid #010030;
+  border-radius: 8px;
+  border-width: 2px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 5px;
+  margin: 10px 0;
+}
+
+p.file {
+  margin: 0;
+  padding: 5px;
+}
+
+.tools {
+  width: 220px;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.tools-link {
+  color: white;
+  font-size: 15px;
+  float: left;
+  padding: 10px;
+  text-align: center;
+}
+
+.tool-logo {
+  font-size: 50px;
+  color: #ec6dff;
+  margin-bottom: 5px;
+}
+
+h5 {
+  font-size: 20px;
+  margin: 0;
+  margin-top: 8px;
+  padding: 0;
+}
+
+.meetings-area {
+  width: 920px;
+  height: 300px;
+}
+
+.upcoming {
+  width: 450px;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.past {
+  width: 450px;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* ****************************** Roomzie Demonstration ************************** */
+
+.demonstration-body {
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  margin: 0;
+  padding: 0;
+}

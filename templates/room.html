@@ -4,55 +4,55 @@
 <div id="main-body">
 <h1>{{ room.name }} Room</h1>
 
-<div class="new-area main-page-area">
-    <h2>What's New & Important For You</h3>
+<div class="new-area room-page-area">
+    <h2 class="room-h2">What's New & Important For You</h3>
 
-        <div class="activity area-interior">
-            <p class="activity-main"><strong>Daily Stand Up</strong> meeting started in Homescreen Team</p>
-            <p class="activity-project">Homescreen Team</p>
-            <p class="activity-time">Now</p>
+        <div class="activity area-interior area-interior-long">
+            <p class="activity-main new-long"><strong>Daily Stand Up</strong> meeting started in Homescreen Team</p>
+            <button class="thin long-area">View</button>
           </div>
-          <div class="activity area-interior">
-            <p class="activity-main">You've been assigned a new task: <strong>Develop a project budget.</strong></p>
-            <p class="activity-project">Project Winter</p>
-            <p class="activity-time">Now</p>
+          <div class="activity area-interior area-interior-long">
+            <p class="activity-main new-long" new-long>You've been assigned a new task: <strong>Develop a project budget.</strong></p>
+            <button class="thin long-area">View</button>
           </div>
-          <div class="activity area-interior">
-            <p class="activity-main">New meeting summary created: <strong>Daily Stand Up.</strong></p>
-            <p class="activity-room">Homescreen Team</p>
-            <p class="activity-time">Now</p>
+          <div class="activity area-interior area-interior-long">
+            <p class="activity-main new-long">New meeting summary created: <strong>Daily Stand Up.</strong></p>
+            <button class="thin long-area">View</button>
           </div>
 </div>
 
 
-<div class="teammates-area main-page-area">
-    <h2>Your Teammates</h3>
-    <button>See full roster</button>
-    <div class="area-interior">
+<div class="teammates-area room-page-area">
+    <h2 class="room-h2">Your Teammates</h2>
+        <button class="thin extra-long-area">See full roster</button>
 
-    {% for teammate in teammates %}
-
-    <div class="person-div area-interior">
-        <img class="pinned-person" src="/static/images/generic_user.png" alt="{{ teammate.first_name }} {{teammate.last_name }}">
-        <div class="availability {{ teammate.availability }}"></div>
-    
-        <p>{{ teammate.first_name }} {{ teammate.last_name }}</p>
-        <p>{{ teammate.job_title }}</p>
-    </div>
-
-    {% endfor %}
-    </div>
+        <div class="user-area room-user-area">
+            {% for person in teammates %}
+        
+            <div class="user">
+              <img class="user-picture" src="/static/images/generic_user.png" alt="{{ person.first_name }} {{ person.last_name }}">
+              <svg width="15" height="15">
+                <circle class="{{ person.availability }}" cx="5" cy="5" r="5" />
+              </svg>
+              <div class="user-info">
+                <p class="user-name"><strong>{{ person.first_name }} {{ person.last_name }}</strong></p>
+                <p class="user-job">{{ person.job_title }}</p>
+              </div>
+            </div>
+        
+            {% endfor %}
+            </div>
 
 </div>
 
-<div class="reminders-area main-page-area">
-    <h2>Your Reminders</h3>
+<div class="reminders-area room-page-area">
+    <h2 class="room-h2">Your Reminders</h2>
     
     {% for event in events %}
 
-    <div class="event-div area-interior">
-        <p>Your upcoming event, {{ event.name }}, is coming up on {{ event.datetime }}</p>
-        <button class="solid button">Prep Now</button>
+    <div class="area-interior area-interior-horizontal event-area">
+        <p class="reminders">Your upcoming event, {{ event.name }}, is coming up on {{ event.datetime }}</p>
+        <button class="thin short-area">Prep Now</button>
     </div>
 
     {% endfor %}
@@ -60,67 +60,80 @@
 </div>
 
 
-<div class="resources-area main-page-area">
-    <h2>Room Resources</h3>
+<div class="resources-area room-page-area">
+    <h2 class="room-h2">Room Resources</h2>
     
-    <h6>Team Files</h6>
-    <div class="area-interior">
-        <p>SOW.pdf</p>
-    </div>
-    <div class="area-interior">
-        <p>2023 Project Plan.pdf</p>
-    </div>
-    <div class="area-interior">
-        <p>SB HiFi Designs_v2.jpg</p>
+    <div class="team-files">
+        <h6>Team Files</h6>
+        <div class="team-file">
+            <p class="file">SOW.pdf</p>
+        </div>
+        <div class="team-file">
+            <p class="file">2023 Project Plan.pdf</p>
+        </div>
+        <div class="team-file">
+            <p class="file">SB HiFi Designs_v2.jpg</p>
+        </div>
     </div>
 
-    <h6>Tools</h6>
-    <a href="https://www.figma.com/" class="tools-link"><i class="fa-brands fa-figma fa"></i>
-        <br>
-        Figma
-    </a>
-    <a href="https://github.com/" class="tools-link"><i class="fa-brands fa-github fa"></i>
-        <br>
-        Github
-    </a>
-    <a href="https://mailchimp.com/" class="tools-link"><i class="fa-brands fa-mailchimp fa"></i>
-        <br>
-        Mailchimp
-    </a>
+    <div class="tools">
+        <h6>Tools</h6>
+        <div class="tool">
+            <a href="https://www.figma.com/" class="tools-link"><i class="fa-brands fa-figma fa tool-logo"></i>
+                <br>
+                Figma
+            </a>
+        </div>
+        <div class="tool">
+            <a href="https://github.com/" class="tools-link"><i class="fa-brands fa-github fa tool-logo"></i>
+                <br>
+                Github
+            </a>
+        </div>
+        <div class="tool">
+            <a href="https://mailchimp.com/" class="tools-link"><i class="fa-brands fa-mailchimp fa tool-logo"></i>
+                <br>
+                Mailchimp
+            </a>
+        </div>
+    </div>
 
 </div>
 
 
-<div class="meetings-area main-page-area">
-    <h2>Your Meetings</h3>
+<div class="meetings-area room-page-area">
+    <h2 class="room-h2">Your Meetings</h2>
     
-    
-    <h6>Upcoming</h6>
+    <div class="upcoming">
+    <h5>Upcoming</h5>
     {% for event in events %}
 
-    <div class="event-div area-interior">
-        <p><strong>{{ event.name }}</strong></p>
-        <p>{{ event.datetime }}</p>
-        <a href="https://meet.google.com/wje-rtng-zzb"><button class="solid button">Join</button></a>
+    <div class="area-interior area-interior-horizontal event-area">
+        <p class="reminders"><strong>{{ event.name }}</strong></p>
+        <p class="reminders">{{ event.datetime }}</p>
+        <a href="https://meet.google.com/wje-rtng-zzb"><button class="thin short-area">Join</button></a>
     </div>
 
     {% endfor %}
+    </div>
 
-    <h6>Past</h6>
-    <div class="event-div area-interior">
-        <p><strong>Weekly Scrum Meeting</strong></p>
-        <p>10/27/23</p>
-        <button class="solid button">Summary</button>
+    <div class="past">
+    <h5>Past</h5>
+    <div class="area-interior area-interior-horizontal event-area">
+        <p class="reminders"><strong>Weekly Scrum Meeting</strong></p>
+        <p class="reminders">10/27/23</p>
+        <button class="thin short-area">Summary</button>
     </div>
-    <div class="event-div area-interior">
-        <p><strong>Daily Standup</strong></p>
-        <p>10/24/23</p>
-        <button class="solid button">Summary</button>
+    <div class="area-interior area-interior-horizontal event-area">
+        <p class="reminders"><strong>Daily Standup</strong></p>
+        <p class="reminders">10/24/23</p>
+        <button class="thin short-area">Summary</button>
     </div>
-    <div class="event-div area-interior">
-        <p><strong>Weekly All Hands</strong></p>
-        <p>10/22/23</p>
-        <button class="solid button">Summary</button>
+    <div class="area-interior area-interior-horizontal event-area">
+        <p class="reminders"><strong>Weekly All Hands</strong></p>
+        <p class="reminders">10/22/23</p>
+        <button class="thin short-area">Summary</button>
+    </div>
     </div>
 
 </div>
