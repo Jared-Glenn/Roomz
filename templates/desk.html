@@ -32,20 +32,32 @@
     <h2>Activity Feed</h2>
     <button class="thin">See all</button>
 
-    <div class="activity">
-      <p class="activity-main"><strong>Daily Stand Up</strong> meeting started in Homescreen Team</p>
-      <p class="activity-project">Homescreen Team</p>
-      <p class="activity-time">Now</p>
+    <div class="activity area-interior area-interior-horizontal">
+      <div class="activity-first">
+        <p class="activity-main"><strong>Daily Stand Up</strong> meeting started in Homescreen Team</p>
+        <p class="activity-project">Homescreen Team</p>
+      </div>
+      <div class="activity-secondary"> 
+        <p class="activity-time">Now</p>
+      </div>
     </div>
-    <div class="activity">
-      <p class="activity-main">You've been assigned a new task: <strong>Develop a project budget.</strong></p>
-      <p class="activity-project">Project Winter</p>
-      <p class="activity-time">Now</p>
+    <div class="activity area-interior area-interior-horizontal">
+      <div class="activity-first">
+        <p class="activity-main">You've been assigned a new task: <strong>Develop a project budget.</strong></p>
+        <p class="activity-project">Project Winter</p>
+      </div>
+      <div class="activity-secondary"> 
+        <p class="activity-time">Now</p>
+      </div>
     </div>
-    <div class="activity">
-      <p class="activity-main">New meeting summary created: <strong>Daily Stand Up.</strong></p>
-      <p class="activity-room">Homescreen Team</p>
-      <p class="activity-time">Now</p>
+    <div class="activity area-interior area-interior-horizontal">
+      <div class="activity-first">
+        <p class="activity-main">New meeting summary created: <strong>Daily Stand Up.</strong></p>
+        <p class="activity-project">Homescreen Team</p>
+      </div>
+      <div class="activity-secondary"> 
+        <p class="activity-time">Now</p>
+      </div>
     </div>
   </div>
 
@@ -53,15 +65,17 @@
     <h2>Upcoming Events</h2>
     <button class="thin">See all</button>
 
-    {% for event in events %}
+    <img class="schedule" src="/static/images/schedule.png" alt="Daily Schedule">
 
-    <div class="event">
+    <!-- {% for event in events %}
+
+    <div class="event area-interior area-interior-horizontal">
       <p class="event-room">{{ event.room }}</p>
       <p class="event-name">{{ event.name }}</p>
       <p class="event-time">{{ event.datetime }}</p>
     </div>
 
-    {% endfor %}
+    {% endfor %} -->
 
   </div>
 
@@ -69,15 +83,22 @@
     <h2>Pinned People</h2>
     <button class="thin">See all</button>
 
+    <div class="user-area">
     {% for person in user.pinned_people %}
 
-    <div class="pinned-person">
-      <p class="pinned-person-name">{{ person.first_name }} {{ person.last_name }}</p>
-      <p class="pinned-person-job">{{ person.job_title }}</p>
-      <p class="pinned-person-availability">{{ person.availability }}</p>
+    <div class="user">
+      <img class="user-picture" src="/static/images/generic_user.png" alt="{{ person.first_name }} {{ person.last_name }}">
+      <svg width="15" height="15">
+        <circle class="{{ person.availability }}" cx="5" cy="5" r="5" />
+      </svg>
+      <div class="user-info">
+        <p class="user-name"><strong>{{ person.first_name }} {{ person.last_name }}</strong></p>
+        <p class="user-job">{{ person.job_title }}</p>
+      </div>
     </div>
 
     {% endfor %}
+    </div>
 
   </div>
 
