@@ -8,7 +8,7 @@ from models import db, connect_db, User, Room, User_Room, Event, Task
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///roomz'
+app.config['DATABASE_URL'] = 'postgres://xbdnpynp:7Q3piw6iXFDY1Czv6MyCS2vOKvvEHHie@bubble.db.elephantsql.com/xbdnpynp'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = "7c42c706875895826d571202d0cd41e3"
